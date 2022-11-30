@@ -2,7 +2,12 @@
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
+  var isUppercase = false;
+  var isLowercase = false;
+  var isSpecial = false;
+  var isNumber = false;
   
+  return "";
 }
 
 // Write password to the #password input
