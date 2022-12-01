@@ -44,6 +44,11 @@ function generatePassword() {
     passwordOption += numbers;
   }
 
+  if (!isUppercase && !isLowercase && !isSpecial && !isNumber) {
+    alert("Sorry, you must choose at least one of these character options.");
+    return;
+  }
+
   for (var i = 0; i <= passwordLength; i++) {
     randomPassword += passwordOption[Math.floor(Math.random() * passwordOption.length)];
   }
