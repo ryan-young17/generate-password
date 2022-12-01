@@ -2,19 +2,13 @@
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
-  var special = "!#$%&()*+,-./:;<=>?@[]^_`{|}~";
+  var special = "!#$%&()*+-./:;<=>?@[]^_`{|}~";
   var letters = "abcdefghijklmnopqrstuvwxyz";
   var numbers = "0123456789";
   var upLetters = letters.toUpperCase();
-  var isUppercase = confirm("Would you like to use uppercase?");
-  var isLowercase = confirm("Would you like to use lowercase?");
-  var isSpecial = confirm("Would you like to use special characters?");
-  var isNumber = confirm("Would you like to use numbers?");
   var passwordLength = "";
-  var randomSpecial = Math.floor(Math.random() * special.length);
-  var randomLetters = Math.floor(Math.random() * letters.length);
-  var randomNumbers = Math.floor(Math.random() * numbers.length);
-  var randomUppercase = Math.floor(Math.random() * upLetters.length);
+  var passwordOption = "";
+  var randomPassword = "";
 
   while (true) {
     passwordLength = parseInt(prompt("Please choose the length of your password between 8 - 128 characters."));
@@ -25,31 +19,36 @@ function generatePassword() {
     }
   }
 
+  var isUppercase = confirm("Would you like to use uppercase?");
+  var isLowercase = confirm("Would you like to use lowercase?");
+  var isSpecial = confirm("Would you like to use special characters?");
+  var isNumber = confirm("Would you like to use numbers?");
+
   if (isUppercase) {
     //Use Uppercase Letters
-    console.log("uppercase");
+    passwordOption += upLetters;
   }
 
   if (isLowercase) {
-    //Use Lowercase Letters
-    console.log("lowercase");
+    //Use Uppercase Letters
+    passwordOption += letters;
   }
 
   if (isSpecial) {
-    //Use Special Characters
-    console.log("special");
+    //Use Uppercase Letters
+    passwordOption += special;
   }
 
   if (isNumber) {
-    //Use Numbers
-    console.log("number");
+    //Use Uppercase Letters
+    passwordOption += numbers;
   }
 
-  // Grab Random Letters
+  for (var i = 0; i <= passwordLength; i++) {
+    randomPassword += passwordOption[Math.floor(Math.random() * passwordOption.length)];
+  }
 
-
-
-  return "";
+  return randomPassword;
 }
 
 // Write password to the #password input
