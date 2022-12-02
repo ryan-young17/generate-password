@@ -49,7 +49,7 @@ function generatePassword() {
     return "";
   }
 
-  for (var i = 0; i <= passwordLength; i++) {
+  for (var i = 0; i < passwordLength; i++) {
     randomPassword += passwordOption[Math.floor(Math.random() * passwordOption.length)];
   }
 
