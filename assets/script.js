@@ -12,7 +12,7 @@ function generatePassword() {
 
   while (true) {
     passwordLength = parseInt(prompt("Please choose the length of your password between 8 - 128 characters."));
-  if (passwordLength >= 8 && passwordLength <= 128) {
+  if (passwordLength > 8 && passwordLength < 128) {
       break;
     } else {
       alert("Sorry, please select a number between 8 - 128.");
@@ -46,7 +46,7 @@ function generatePassword() {
 
   if (!isUppercase && !isLowercase && !isSpecial && !isNumber) {
     alert("Sorry, you must choose at least one of these character options.");
-    return;
+    return "";
   }
 
   for (var i = 0; i <= passwordLength; i++) {
